@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Password</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #333;
+            padding: 15px;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Card */
+        .container {
+            margin-top: 80px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 🔝 Navbar -->
+<div class="navbar">
+    <a href="/">🏠 Home</a>
+    <a href="/add">➕ Add</a>
+    <a href="/view">🔍 View</a>
+    <a href="/all">📋 All</a>
+</div>
+
+<!-- 📦 Main Content -->
+<div class="container">
+    <div class="card">
+        <h2>🔍 Search Password</h2>
+
+        <form method="POST">
+            <input type="text" name="website" placeholder="Enter Website" required>
+            <br>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <p><b>Website:</b> {{ result.website }}</p>
+            <p><b>Username:</b> {{ result.username }}</p>
+            <p><b>Password:</b> {{ result.password }}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

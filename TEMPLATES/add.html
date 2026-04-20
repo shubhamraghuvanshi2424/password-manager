@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Password</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #333;
+            padding: 15px;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form Container */
+        .container {
+            margin-top: 80px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .note {
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 🔝 Navbar -->
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/add">Add</a>
+    <a href="/view">View</a>
+    <a href="/all">All</a>
+</div>
+
+<!-- ➕ Add Password Form -->
+<div class="container">
+    <div class="card">
+        <h2>➕ Add Password</h2>
+
+        <form method="POST">
+            <input type="text" name="website" placeholder="Website" required><br>
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="text" name="password" placeholder="Password (leave blank to auto-generate)"><br>
+
+            <button type="submit">Save Password</button>
+        </form>
+
+        <p class="note">* Leave password blank to auto-generate</p>
+    </div>
+</div>
+
+</body>
+</html>

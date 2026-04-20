@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Passwords</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #333;
+            padding: 15px;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Container */
+        .container {
+            margin-top: 60px;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 70%;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        .delete-btn {
+            background: red;
+            color: white;
+            padding: 6px 10px;
+            text-decoration: none;
+        }
+
+        .delete-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 🔝 Navbar -->
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/add">Add</a>
+    <a href="/view">View</a>
+    <a href="/all">All</a>
+</div>
+
+<!-- 📋 All Passwords -->
+<div class="container">
+    <h2>📋 All Passwords</h2>
+
+    <table>
+        <tr>
+            <th>Website</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+
+        {% for row in data %}
+<tr>
+    <td>{{ row.website }}</td>
+    <td>{{ row.username }}</td>
+    <td>{{ row.password }}</td>
+    <td>
+        <a href="/delete/{{ row.id }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}}
+
+    </table>
+</div>
+
+</body>
+</html>
